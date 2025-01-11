@@ -10,17 +10,24 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      const { User, Bootcamp } = models;
-      this.belongsTo(User);
-      this.belongsTo(Bootcamp);
+      //const { User, Bootcamp } = models;
+      //this.belongsTo(User);
+      //this.belongsTo(Bootcamp);
     }
   }
   UserBootcamp.init({
-    UserId: DataTypes.INTEGER,
-    BootcampId: DataTypes.INTEGER
+    UserId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    BootcampId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'UserBootcamp',
+    paranoid: true
   });
   return UserBootcamp;
 };

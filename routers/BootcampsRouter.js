@@ -8,6 +8,7 @@ router.get("/:id", BootcampsController.findBootcampById);
 router.post("/", BootcampsController.createBootcamp);
 router.put("/:id", BootcampsController.updateBootcampById);
 router.delete("/:id", BootcampsController.deleteBootcampById);
+router.post("/userBootcamp", BootcampsController.createUserBootcamp);
 
 module.exports = {
     BootcampsRouter : router
